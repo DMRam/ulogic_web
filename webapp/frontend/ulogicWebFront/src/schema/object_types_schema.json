@@ -1,0 +1,169 @@
+[
+  {
+    "name": "SOXBusEntity",
+    "localizedLabel": "Business Entity",
+    "localizedPluralLabel": "Business Entities",
+    "description": "OpenPages GRC Object Type",
+    "id": "5",
+    "fieldDefinitions": {
+      "fieldDefinition": [{
+        "id": "28",
+        "name": "Resource ID",
+        "localizedLabel": "Resource ID",
+        "localizedGuidance": "Resource ID",
+        "dataType": "ID_TYPE",
+        "required": true,
+        "description": "Resource ID",
+        "computed": false,
+        "readOnly": true,
+        "isHierarchical": false
+      },
+        {
+          "id": "56",
+          "name": "Description",
+          "localizedLabel": "Title",
+          "localizedGuidance": "Use to enter or edit a description of this object.",
+          "dataType": "STRING_TYPE",
+          "required": false,
+          "description": "Use to enter or edit a description of this object.",
+          "computed": false,
+          "readOnly": false,
+          "isHierarchical": false
+        },
+        {
+          "id": "164",
+          "name": "MRG-BusEnt:Additional Description",
+          "localizedLabel": "Rely-Upon Information",
+          "localizedGuidance": "Use to enter or edit a description about this control.",
+          "dataType": "MEDIUM_STRING_TYPE",
+          "required": false,
+          "description": "Use to enter or edit a description about this control.",
+          "computed": false,
+          "readOnly": false,
+          "isHierarchical": false
+        },
+        {
+          "id": "169",
+          "name": "OPSS-BusEnt:BC Managers",
+          "localizedLabel": "Business Continuity Managers",
+          "localizedGuidance": "BC Managers",
+          "dataType": "STRING_TYPE",
+          "required": false,
+          "computed": false,
+          "readOnly": false,
+          "isHierarchical": false
+        },
+        {
+          "id": "168",
+          "name": "OPSS-BusEnt:Compliance Owner",
+          "localizedLabel": "Compliance Owner",
+          "localizedGuidance": "Use to indicate the person responsible for Compliance within this Business Entity.assign the highest level of responsibility for the entity.",
+          "dataType": "STRING_TYPE",
+          "required": false,
+          "description": "Use to indicate the person responsible for Compliance within this Business Entity.assign the highest level of responsibility for the entity.",
+          "computed": false,
+          "readOnly": false,
+          "isHierarchical": false
+        }
+      ]
+    },
+    "fileTypes": {
+      "fileType": []
+    }
+  },
+  {
+    "name": "SOXRisk",
+    "localizedLabel": "Risk",
+    "localizedPluralLabel": "Risks",
+    "description": "Unified Object Type",
+    "id": "96",
+    "fieldDefinitions": {
+      "fieldDefinition": [{
+        "id": "28",
+        "name": "Resource ID",
+        "localizedLabel": "Resource ID",
+        "localizedGuidance": "Resource ID",
+        "dataType": "ID_TYPE",
+        "required": true,
+        "description": "Resource ID",
+        "computed": false,
+        "readOnly": true,
+        "isHierarchical": false
+      },
+        {
+          "id": "56",
+          "name": "Description",
+          "localizedLabel": "Title",
+          "localizedGuidance": "Use to enter or edit a description of this object.",
+          "dataType": "STRING_TYPE",
+          "required": false,
+          "description": "Use to enter or edit a description of this object.",
+          "computed": false,
+          "readOnly": false,
+          "isHierarchical": false
+        },
+        {
+          "id": "730",
+          "name": "OPSS-Shared-Lib:Library ID",
+          "localizedLabel": "Library ID",
+          "localizedGuidance": "Used by Library Sync and for Reporting",
+          "dataType": "STRING_TYPE",
+          "required": false,
+          "description": "Used by Library Sync and for Reporting",
+          "computed": false,
+          "readOnly": false,
+          "isHierarchical": false
+        },
+        {
+          "id": "2124",
+          "name": "OPSS-Rsk:Additional Description",
+          "localizedLabel": "Library Risk Description",
+          "localizedGuidance": "Use to enter or edit a description about this control.",
+          "dataType": "STRING_TYPE",
+          "required": false,
+          "description": "Use to enter or edit a description about this control.",
+          "computed": false,
+          "readOnly": false,
+          "isHierarchical": false
+        },
+
+        {
+          "id": "3244",
+          "name": "Citi-Src:SrcRefID",
+          "localizedLabel": "Source Reference ID",
+          "localizedGuidance": "_$_ Empty String - DO NOT TRANSLATE _$_",
+          "dataType": "STRING_TYPE",
+          "required": false,
+          "computed": false,
+          "readOnly": false,
+          "isHierarchical": false
+        },
+        {
+          "id": "3245",
+          "name": "Citi-Src:SrcRefName",
+          "localizedLabel": "Source Reference Name",
+          "localizedGuidance": "_$_ Empty String - DO NOT TRANSLATE _$_",
+          "dataType": "STRING_TYPE",
+          "required": false,
+          "computed": false,
+          "readOnly": false,
+          "isHierarchical": false
+        },
+        {
+          "id": "3246",
+          "name": "Citi-Src:STPN",
+          "localizedLabel": "Standard Test Program Name",
+          "localizedGuidance": "_$_ Empty String - DO NOT TRANSLATE _$_",
+          "dataType": "STRING_TYPE",
+          "required": false,
+          "computed": false,
+          "readOnly": false,
+          "isHierarchical": false
+        }
+      ]
+    },
+    "fileTypes": {
+      "fileType": []
+    }
+  }
+]
