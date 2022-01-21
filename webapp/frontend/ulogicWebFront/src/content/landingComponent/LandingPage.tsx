@@ -1,14 +1,13 @@
 import React from 'react';
 import {
   Tab,
-  Tabs,
-
+  Tabs
 } from 'carbon-components-react';
-import { InfoSection, InfoCard } from '../../components/Info';
+import { InfoSection, InfoCard } from '../../components/infoComponent';
 import Globe32 from '@carbon/icons-react/lib/globe/32';
 import PersonFavorite32 from '@carbon/icons-react/lib/person--favorite/32';
 import Application32 from '@carbon/icons-react/lib/application/32';
-import { FormComp } from '../../components/Form/FormComp';
+import { FormComp } from '../../components/formComponent/FormComp';
 
 const props = {
   tabs: {
@@ -27,6 +26,7 @@ const LandingPage = () => {
   return (
     <>
       <div style={{ background: "black" }} className="bx--grid bx--grid--full-width landing-page">
+
         <div style={{ backgroundImage: `url("https://besthqwallpapers.com/Uploads/24-7-2020/138345/thumb2-digital-technology-background-with-zeros-and-ones-digital-blue-background-binary-code-background-digital-data-binary-code-texture.jpg")` }} className="bx--row landing-page__banner">
           <div className="bx--col-lg-16">
             {/* <Breadcrumb noTrailingSlash aria-label="Page navigation">
@@ -49,12 +49,12 @@ const LandingPage = () => {
 
         <div className="bx--row landing-page__r3">
           <div className="bx--col bx--no-gutter">
-            <Tabs  {...props.tabs} aria-label="Tab navigation" type="container" >
-              <Tab {...props.tab} label="About" aria-hidden={true}>
+            <Tabs  {...props.tabs} aria-label="Tab navigation"  >
+              <Tab {...props.tab} label="About">
                 <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
                   <div className="bx--row landing-page__tab-content">
-
                     <div className="bx--col-md-4 bx--col-lg-7">
+
                       <h2 className="landing-page__subheading">
                         Ulogic
                       </h2>
@@ -121,10 +121,30 @@ const LandingPage = () => {
                   </div>
                 </div>
               </Tab>
+              <Tab {...props.tab} label="Testing">
+                <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
+                  <div className="bx--row landing-page__tab-content">
+                    <div className="bx--col-md-4 bx--col-lg-7">
+                      <h2 className="landing-page__subheading">
+                        Get in Touch
+                      </h2>
+                      <p className="landing-page__p">
+                        <FormComp />
+                      </p>
+
+                    </div>
+                    <div className="bx--col-md-4 bx--col-lg-7">
+                      <img alt='neu' style={{ width: "100%", borderRadius: 10 }} src='https://www.designyourway.net/blog/wp-content/uploads/2018/12/Information-technology-big-data-collection-complex.jpg' />
+                    </div>
+                  </div>
+                </div>
+              </Tab>
+
             </Tabs>
           </div>
-
         </div>
+
+
         <InfoSection heading="The Principles" className="landing-page__r3">
           <InfoCard
             heading="Carbon is Open"
@@ -142,12 +162,12 @@ const LandingPage = () => {
             icon={<Globe32 />}
           />
         </InfoSection>
-
+        <br />
       </div>
+
       <div style={{ background: "black" }}>
         <p style={{ textAlign: "center", color: "white" }}>&copy;  2022 <a href='http://www.ulogicapp.com'>ulogicapp.com </a></p>
       </div>
-
     </>
   );
 };

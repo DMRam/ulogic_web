@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { ObjectSelected, NewTabInfo } from '../Interfaces/InterfacesHeader';
-import { Services } from '../Services/Axios/Services';
+import { ObjectSelected, NewTabInfo } from '../customInterfaces/InterfacesHeader';
+import { Services } from '../axiosServices/axiosComponent/Services';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { fileUploaderVisibility, newTabName, objectClicked, toggle, toggleRight } from '../store/switcher-slice';
 

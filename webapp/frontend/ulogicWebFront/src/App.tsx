@@ -1,25 +1,22 @@
-import React, { Component } from 'react';
 import './app.scss';
 import { Content } from 'carbon-components-react/lib/components/UIShell';
-import TutorialHeader from './components/Header';
+import TutorialHeader from './components/headerComponent';
 import { Route, Switch } from 'react-router-dom';
-import LandingPage from './content/LandingPage';
-import RepoPage from './content/RepoPage';
+import LandingPage from './content/landingComponent';
+import RepoPage from './content/extraPageComponent';
 
-class App extends Component {
-  render() {
-    return (
-      <>
-        <TutorialHeader />
-        <Content>
-          <Switch>
-            <Route exact path="/" component={LandingPage} />
-            <Route path="/repos" component={RepoPage} />
-          </Switch>
-        </Content>
-      </>
-    );
-  }
+function App() {
+  return (
+    <>
+      <TutorialHeader />
+      <Content>
+        <Switch>
+          <Route exact path="/" component={LandingPage} />
+          <Route path="/repos" component={RepoPage} />
+        </Switch>
+      </Content>
+    </>
+  );
 }
 
 export default App;
