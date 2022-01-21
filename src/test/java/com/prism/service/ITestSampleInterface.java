@@ -1,4 +1,4 @@
-package com.prism.service;
+package com.ulogic.websiteback.service;
 
 public interface ITestSampleInterface {
 

@@ -1,4 +1,4 @@
-package com.prism.controller;
+package com.ulogic.websiteback.controller;
 
 public class TestSampleController {
 

@@ -1,4 +1,4 @@
-package com.ikigai.prism.service;
+package com.ulogic.websiteback.service;
 
 public interface ISampleInterface {
 

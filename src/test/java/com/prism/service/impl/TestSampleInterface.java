@@ -1,6 +1,6 @@
-package com.prism.service.impl;
+package com.ulogic.websiteback.service.impl;
 
-import com.prism.service.ITestSampleInterface;
+import com.ulogic.websiteback.service.ITestSampleInterface;
 
 public class TestSampleInterface implements ITestSampleInterface
 {

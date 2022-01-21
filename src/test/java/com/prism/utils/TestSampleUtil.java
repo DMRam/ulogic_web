@@ -1,4 +1,4 @@
-package com.prism.utils;
+package com.ulogic.websiteback.utils;
 
 public class TestSampleUtil {
 

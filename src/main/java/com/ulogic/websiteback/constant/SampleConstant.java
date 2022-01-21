@@ -1,5 +1,5 @@
 package com.ulogic.websiteback.constant;
 
-public class TestSampleConstant {
+public class SampleConstant {
 
 }

@@ -1,9 +1,9 @@
-package com.ikigai.prism.controller;
+package com.ulogic.websiteback.controller;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ikigai.prism.bean.SampleBean;
+import com.ulogic.websiteback.bean.SampleBean;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

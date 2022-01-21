@@ -1,4 +1,4 @@
-package com.ikigai.prism.bean;
+package com.ulogic.websiteback.bean;
 
 public class SampleBean {
 
