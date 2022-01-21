@@ -25,6 +25,7 @@ interface ToggleState {
     name: string;
     description: string
   }];
+  selectedTabSideNavMenu: string
 }
 
 // Define the initial state using that type
@@ -43,6 +44,7 @@ const initialState: ToggleState = {
     name: "",
     description: ""
   }],
+  selectedTabSideNavMenu: "",
 };
 
 const sliceLeftMenu = createSlice({
@@ -69,11 +71,15 @@ const sliceLeftMenu = createSlice({
     newTabName(state, action) {
       console.log(action.payload + " element received in slice")
       state.newTabInfo.push(action.payload)
-    }
+    },
+
+    selectedTabSmallDev(state, action) {
+      state.selectedTabSideNavMenu = action.payload
+    },
   },
 });
 
-export const { toggle, objectClicked, fileUploaderVisibility, toggleRight, newTabName } =
+export const { toggle, objectClicked, fileUploaderVisibility, toggleRight, newTabName, selectedTabSmallDev } =
   sliceLeftMenu.actions;
 export const selectUI = (state: RootState) => state.ui;
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { ObjectSelected, NewTabInfo } from '../customInterfaces/InterfacesHeader';
 import { Services } from '../axiosServices/axiosComponent/Services';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { fileUploaderVisibility, newTabName, objectClicked, toggle, toggleRight } from '../store/switcher-slice';
+import { fileUploaderVisibility, newTabName, objectClicked, toggle, toggleRight, selectedTabSmallDev } from '../store/switcher-slice';
 
 
 export const useHeader = () => {
@@ -31,6 +31,8 @@ export const useHeader = () => {
             description: ""
         },
     ]);
+
+    const tabSelectedNumber = useAppSelector((state) => state.ui.selectedTabSideNavMenu)
 
     // this getting the controller with / ***************************
     useEffect(() => {
@@ -68,7 +70,9 @@ export const useHeader = () => {
         dispatch(fileUploaderVisibility());
     };
 
-
+    const smallDevTabSelectionHandler = (selectedSection:string) => {
+        dispatch(selectedTabSmallDev(selectedSection))
+    }
 
     return {
         objectName,
@@ -81,6 +85,8 @@ export const useHeader = () => {
         switcherInitalState,
         newTabInfoHandler,
         newTabCreated,
-        newTabInf
+        newTabInf,
+        tabSelectedNumber,
+        smallDevTabSelectionHandler
     }
 }

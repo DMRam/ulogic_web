@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Tab,
   Tabs
@@ -8,6 +8,7 @@ import Globe32 from '@carbon/icons-react/lib/globe/32';
 import PersonFavorite32 from '@carbon/icons-react/lib/person--favorite/32';
 import Application32 from '@carbon/icons-react/lib/application/32';
 import { FormComp } from '../../components/formComponent/FormComp';
+import { useHeader } from '../../customHooks/useHeader';
 
 const props = {
   tabs: {
@@ -23,6 +24,17 @@ const props = {
 };
 
 const LandingPage = () => {
+
+  const { tabSelectedNumber } = useHeader()
+  // Este state debe recibir el valor enviado desde el sidenavmenu
+  const [selectedTab, setSelectedTab] = useState("");
+  
+
+  useEffect(() => {
+    setSelectedTab(tabSelectedNumber)
+  }, []);
+
+
   return (
     <>
       <div style={{ background: "black" }} className="bx--grid bx--grid--full-width landing-page">
@@ -47,13 +59,15 @@ const LandingPage = () => {
         </div>
 
 
+
         <div className="bx--row landing-page__r3">
           <div className="bx--col bx--no-gutter">
-            <Tabs  {...props.tabs} aria-label="Tab navigation"  >
-              <Tab {...props.tab} label="About">
+            <Tabs id="smallScreenMenuLanding"   {...props.tabs} aria-label="Tab navigation" selected={Number(tabSelectedNumber)}  >
+
+              <Tab  {...props.tab} label="About">
                 <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
                   <div className="bx--row landing-page__tab-content">
-                    <div className="bx--col-md-4 bx--col-lg-7">
+                    <div className="bx--col-md-4 bx--col-lg-7 marginTabSmallScreen">
 
                       <h2 className="landing-page__subheading">
                         Ulogic
@@ -72,10 +86,8 @@ const LandingPage = () => {
                         ex id temporibus veniam nemo, ea quis fuga magnam odit voluptas? Doloribus itaque officia
                         eligendi iste ullam debitis!
                       </p>
-
-
                     </div>
-                    <div className="bx--col-md-4 bx--col-lg-7">
+                    <div className="bx--col-md-4 bx--col-lg-7 marginTabSmallScreen">
                       <img alt='neu' style={{ width: "100%" }} src='https://www.designyourway.net/blog/wp-content/uploads/2018/12/Information-technology-big-data-collection-complex.jpg' />
                     </div>
                   </div>
@@ -84,7 +96,7 @@ const LandingPage = () => {
               <Tab {...props.tab} label="Design">
                 <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
                   <div className="bx--row landing-page__tab-content">
-                    <div className="bx--col-md-4 bx--col-lg-7">
+                    <div className="bx--col-md-4 bx--col-lg-7 marginTabSmallScreen">
                       <h2 className="landing-page__subheading">
                         What is Carbon?
                       </h2>
@@ -97,7 +109,7 @@ const LandingPage = () => {
 
 
                     </div>
-                    <div className="bx--col-md-4 bx--col-lg-7">
+                    <div className="bx--col-md-4 bx--col-lg-7 marginTabSmallScreen">
                       <img alt='neu' style={{ width: "100%" }} src='https://www.designyourway.net/blog/wp-content/uploads/2018/12/Information-technology-big-data-collection-complex.jpg' />
                     </div>
                   </div>
@@ -106,7 +118,7 @@ const LandingPage = () => {
               <Tab {...props.tab} label="Develop">
                 <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
                   <div className="bx--row landing-page__tab-content">
-                    <div className="bx--col-md-4 bx--col-lg-7">
+                    <div className="bx--col-md-4 bx--col-lg-7 marginTabSmallScreen">
                       <h2 className="landing-page__subheading">
                         Get in Touch
                       </h2>
@@ -115,7 +127,7 @@ const LandingPage = () => {
                       </p>
 
                     </div>
-                    <div className="bx--col-md-4 bx--col-lg-7">
+                    <div className="bx--col-md-4 bx--col-lg-7 marginTabSmallScreen">
                       <img alt='neu' style={{ width: "100%", borderRadius: 10 }} src='https://www.designyourway.net/blog/wp-content/uploads/2018/12/Information-technology-big-data-collection-complex.jpg' />
                     </div>
                   </div>
@@ -124,7 +136,7 @@ const LandingPage = () => {
               <Tab {...props.tab} label="Testing">
                 <div className="bx--grid bx--grid--no-gutter bx--grid--full-width">
                   <div className="bx--row landing-page__tab-content">
-                    <div className="bx--col-md-4 bx--col-lg-7">
+                    <div className="bx--col-md-4 bx--col-lg-7 marginTabSmallScreen">
                       <h2 className="landing-page__subheading">
                         Get in Touch
                       </h2>
@@ -133,7 +145,7 @@ const LandingPage = () => {
                       </p>
 
                     </div>
-                    <div className="bx--col-md-4 bx--col-lg-7">
+                    <div className="bx--col-md-4 bx--col-lg-7 marginTabSmallScreen">
                       <img alt='neu' style={{ width: "100%", borderRadius: 10 }} src='https://www.designyourway.net/blog/wp-content/uploads/2018/12/Information-technology-big-data-collection-complex.jpg' />
                     </div>
                   </div>
