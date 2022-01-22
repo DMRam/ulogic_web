@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { ObjectSelected, NewTabInfo } from '../customInterfaces/InterfacesHeader';
 import { Services } from '../axiosServices/axiosComponent/Services';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { fileUploaderVisibility, newTabName, objectClicked, toggle, toggleRight, selectedTabSmallDev } from '../store/switcher-slice';
+import { newTabName, objectClicked, toggle, toggleLeft, selectedTabSmallDev } from '../store/switcher-slice';
 
 
 export const useHeader = () => {
@@ -13,6 +13,8 @@ export const useHeader = () => {
         (state) => state.ui.isVisibleLeftSideMenu
     );
     const objectClickedBack = useAppSelector((state) => state.ui.objectSelected);
+
+    const leftMenuVisibilitySmallDevices = useAppSelector((state) => state.ui.isVisibleLeftSideMenuAux)
 
     const [objectName, setObject] = useState([
         {
@@ -54,7 +56,7 @@ export const useHeader = () => {
     };
 
     const switcherInitalState = () => {
-        dispatch(toggleRight())
+        dispatch(toggleLeft())
     }
 
     const objectClickHandler = (objectSelectedFromSwitcher: ObjectSelected) => {
@@ -66,11 +68,7 @@ export const useHeader = () => {
         console.log(infoToCreateNewTab + " OBJECT DISTPACHED")
     }
 
-    const fileUploaderHandler = () => {
-        dispatch(fileUploaderVisibility());
-    };
-
-    const smallDevTabSelectionHandler = (selectedSection:string) => {
+    const smallDevTabSelectionHandler = (selectedSection: string) => {
         dispatch(selectedTabSmallDev(selectedSection))
     }
 
@@ -81,12 +79,13 @@ export const useHeader = () => {
         dispatch,
         toggleSwitcher,
         objectClickHandler,
-        fileUploaderHandler,
+
         switcherInitalState,
         newTabInfoHandler,
         newTabCreated,
         newTabInf,
         tabSelectedNumber,
         smallDevTabSelectionHandler
+        , leftMenuVisibilitySmallDevices
     }
 }

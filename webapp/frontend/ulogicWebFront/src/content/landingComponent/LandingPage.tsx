@@ -151,7 +151,6 @@ const LandingPage = () => {
                   </div>
                 </div>
               </Tab>
-
             </Tabs>
           </div>
         </div>

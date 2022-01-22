@@ -18,7 +18,7 @@ interface NewTabInformation {
 // Define a type for the slice state
 interface ToggleState {
   isVisibleLeftSideMenu: boolean;
-  isfileUploaderVisibility: boolean;
+  isVisibleLeftSideMenuAux: boolean;
   objectSelected: ObjectSelected;
   newTabInfo: [{
     id: string;
@@ -31,7 +31,7 @@ interface ToggleState {
 // Define the initial state using that type
 const initialState: ToggleState = {
   isVisibleLeftSideMenu: false,
-  isfileUploaderVisibility: false,
+  isVisibleLeftSideMenuAux: false,
   objectSelected: {
     name: "",
     description: "",
@@ -55,8 +55,8 @@ const sliceLeftMenu = createSlice({
       state.isVisibleLeftSideMenu = !state.isVisibleLeftSideMenu;
     },
 
-    toggleRight(state) {
-      state.isVisibleLeftSideMenu = false;
+    toggleLeft(state) {
+      state.isVisibleLeftSideMenuAux = !state.isVisibleLeftSideMenuAux;
     },
 
     // This function will take whatever element is selected on switcher
@@ -64,9 +64,6 @@ const sliceLeftMenu = createSlice({
       state.objectSelected = action.payload;
     },
 
-    fileUploaderVisibility(state) {
-      state.isfileUploaderVisibility = !state.isfileUploaderVisibility;
-    },
 
     newTabName(state, action) {
       console.log(action.payload + " element received in slice")
@@ -79,7 +76,7 @@ const sliceLeftMenu = createSlice({
   },
 });
 
-export const { toggle, objectClicked, fileUploaderVisibility, toggleRight, newTabName, selectedTabSmallDev } =
+export const { toggle, objectClicked, toggleLeft, newTabName, selectedTabSmallDev } =
   sliceLeftMenu.actions;
 export const selectUI = (state: RootState) => state.ui;
 

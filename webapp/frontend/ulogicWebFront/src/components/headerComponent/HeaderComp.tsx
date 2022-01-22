@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Header,
   HeaderName,
@@ -26,17 +26,28 @@ import { useHeader } from '../../customHooks/useHeader';
 
 const HeaderComp = () => {
 
-  const { smallDevTabSelectionHandler, tabSelectedNumber,  } = useHeader()
-
+  const { smallDevTabSelectionHandler, tabSelectedNumber, switcherVisibility, toggleSwitcher, switcherInitalState , leftMenuVisibilitySmallDevices} = useHeader()
+  const [isVisibleAux, setIsVisibleAux] = useState(true);
+  
   const tabSelectionHandler = (sectionNumber: string) => {
     smallDevTabSelectionHandler(sectionNumber)
+    switcherInitalState()
+    console.log(isVisibleAux + " isVisibleAux!!!!!!!")
     console.log(sectionNumber + " tabSelectedNumber!!!!!!!")
+    console.log(switcherVisibility + " switcherVisibility")
   }
+
+  const visibilityHandler = () => {
+    switcherInitalState()
+  }
+
+  
   return (
     <HeaderContainer
-      render={({ isSideNavExpanded, onClickSideNavExpand }) => (
+      render={({}) => (
+        
         <>
-          <Header aria-label="IBM Platform Name">
+          <Header aria-label="Ulogic">
 
             <SkipToContent />
 
@@ -44,8 +55,8 @@ const HeaderComp = () => {
               <HeaderMenuButton
                 aria-label="Open menu"
                 isCollapsible
-                onClick={onClickSideNavExpand}
-                isActive={isSideNavExpanded}
+                onClick={visibilityHandler}
+                isActive={leftMenuVisibilitySmallDevices}
               />
             </div>
 
@@ -87,15 +98,12 @@ const HeaderComp = () => {
               </HeaderGlobalAction>
             </HeaderGlobalBar>
 
-
-
-
-            {isSideNavExpanded && (
+            {leftMenuVisibilitySmallDevices &&
               <SideNav
-                
                 aria-label="Side navigation"
                 isPersistent={true}
-                expanded={isSideNavExpanded}
+                expanded={leftMenuVisibilitySmallDevices}
+                
               >
                 <SideNavItems>
                   <SideNavMenuItem onClick={() => tabSelectionHandler("0")} href="javascript:void(0)">
@@ -114,8 +122,8 @@ const HeaderComp = () => {
                     Contact
                   </SideNavMenuItem>
                 </SideNavItems>
-              </SideNav>
-            )}
+              </SideNav>}
+
           </Header>
         </>
       )} />)
