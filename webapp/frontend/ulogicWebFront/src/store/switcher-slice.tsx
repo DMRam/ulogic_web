@@ -9,12 +9,6 @@ interface ObjectSelected {
   configuration_3: string;
 }
 
-interface NewTabInformation {
-  id: string;
-  name: string;
-  description: string
-}
-
 // Define a type for the slice state
 interface ToggleState {
   isVisibleLeftSideMenu: boolean;

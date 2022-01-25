@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   Header,
   HeaderName,
@@ -12,22 +12,17 @@ import {
   HeaderMenuButton,
   SideNav,
   SideNavItems,
-  SideNavLink,
-  SideNavMenu,
   SideNavMenuItem,
 } from 'carbon-components-react/lib/components/UIShell';
 import Notification20 from '@carbon/icons-react/lib/notification/20';
-import UserAvatar20 from '@carbon/icons-react/lib/user--avatar/20';
 import AppSwitcher20 from '@carbon/icons-react/lib/app-switcher/20';
-import { Link } from 'react-router-dom';
-import { Search20, Fade16, IotPlatform32 } from '@carbon/icons-react';
-import LandingPage from '../../content/landingComponent';
+import { Search20 } from '@carbon/icons-react';
 import { useHeader } from '../../customHooks/useHeader';
 
 const HeaderComp = () => {
 
-  const { smallDevTabSelectionHandler, tabSelectedNumber, switcherVisibility, toggleSwitcher, switcherInitalState , leftMenuVisibilitySmallDevices} = useHeader()
-  const [isVisibleAux, setIsVisibleAux] = useState(true);
+  const { smallDevTabSelectionHandler, switcherVisibility, switcherInitalState , leftMenuVisibilitySmallDevices} = useHeader()
+  const [isVisibleAux] = useState(true);
   
   const tabSelectionHandler = (sectionNumber: string) => {
     smallDevTabSelectionHandler(sectionNumber)
@@ -44,7 +39,7 @@ const HeaderComp = () => {
   
   return (
     <HeaderContainer
-      render={({}) => (
+      render={() => (
         
         <>
           <Header aria-label="Ulogic">
@@ -106,19 +101,19 @@ const HeaderComp = () => {
                 
               >
                 <SideNavItems>
-                  <SideNavMenuItem onClick={() => tabSelectionHandler("0")} href="javascript:void(0)">
+                  <SideNavMenuItem onClick={() => tabSelectionHandler("0")} href="#">
                     About
                   </SideNavMenuItem>
-                  <SideNavMenuItem onClick={() => tabSelectionHandler("1")} href="javascript:void(0)">
+                  <SideNavMenuItem onClick={() => tabSelectionHandler("1")} href="#">
                     Design
                   </SideNavMenuItem>
-                  <SideNavMenuItem onClick={() => tabSelectionHandler("2")} href="javascript:void(0)">
+                  <SideNavMenuItem onClick={() => tabSelectionHandler("2")} href="#">
                     Development
                   </SideNavMenuItem>
-                  <SideNavMenuItem onClick={() => tabSelectionHandler("3")} href="javascript:void(0)">
+                  <SideNavMenuItem onClick={() => tabSelectionHandler("3")} href="#">
                     Testing
                   </SideNavMenuItem>
-                  <SideNavMenuItem onClick={() => tabSelectionHandler("4")} href="javascript:void(0)">
+                  <SideNavMenuItem onClick={() => tabSelectionHandler("4")} href="#">
                     Contact
                   </SideNavMenuItem>
                 </SideNavItems>

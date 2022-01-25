@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ObjectSelected, NewTabInfo } from '../customInterfaces/InterfacesHeader';
 import { Services } from '../axiosServices/axiosComponent/Services';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
@@ -26,13 +26,7 @@ export const useHeader = () => {
         },
     ]);
 
-    const [newTabInf, setNewTabIn] = useState([
-        {
-            id: "",
-            name: "",
-            description: ""
-        },
-    ]);
+    
 
     const tabSelectedNumber = useAppSelector((state) => state.ui.selectedTabSideNavMenu)
 
@@ -45,11 +39,7 @@ export const useHeader = () => {
     }, []);
 
     // use effect temporally getting info from the modal (Just the name)
-    useEffect(() => {
-        setNewTabIn(
-            newTabCreated
-        )
-    }, [])
+    
 
     const toggleSwitcher = () => {
         dispatch(toggle());
@@ -79,13 +69,11 @@ export const useHeader = () => {
         dispatch,
         toggleSwitcher,
         objectClickHandler,
-
         switcherInitalState,
         newTabInfoHandler,
         newTabCreated,
-        newTabInf,
         tabSelectedNumber,
-        smallDevTabSelectionHandler
-        , leftMenuVisibilitySmallDevices
+        smallDevTabSelectionHandler,
+        leftMenuVisibilitySmallDevices
     }
 }

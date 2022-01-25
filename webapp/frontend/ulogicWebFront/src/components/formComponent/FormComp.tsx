@@ -38,6 +38,7 @@ import {
             placeholder="Please, leave your message"
             rows={4}
           />
+         
         </div>
   
         <Button style={{float:"left"}} kind="primary" tabIndex={0} type="submit">

@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import {
   Tab,
   Tabs
@@ -27,12 +26,12 @@ const LandingPage = () => {
 
   const { tabSelectedNumber } = useHeader()
   // Este state debe recibir el valor enviado desde el sidenavmenu
-  const [selectedTab, setSelectedTab] = useState("");
+  // const [selectedTab, setSelectedTab] = useState("");
   
 
-  useEffect(() => {
-    setSelectedTab(tabSelectedNumber)
-  }, []);
+  // useEffect(() => {
+  //   setSelectedTab(tabSelectedNumber)
+  // }, []);
 
 
   return (
@@ -88,7 +87,7 @@ const LandingPage = () => {
                       </p>
                     </div>
                     <div className="bx--col-md-4 bx--col-lg-7 marginTabSmallScreen">
-                      <img alt='neu' style={{ width: "100%" }} src='https://www.designyourway.net/blog/wp-content/uploads/2018/12/Information-technology-big-data-collection-complex.jpg' />
+                      <img alt='neu' style={{ width: "100%", borderRadius: 10, marginTop: 20 }} src='https://www.designyourway.net/blog/wp-content/uploads/2018/12/Information-technology-big-data-collection-complex.jpg' />
                     </div>
                   </div>
                 </div>
@@ -110,7 +109,7 @@ const LandingPage = () => {
 
                     </div>
                     <div className="bx--col-md-4 bx--col-lg-7 marginTabSmallScreen">
-                      <img alt='neu' style={{ width: "100%" }} src='https://www.designyourway.net/blog/wp-content/uploads/2018/12/Information-technology-big-data-collection-complex.jpg' />
+                      <img alt='neu' style={{ width: "100%", borderRadius: 10, marginTop: 20 }} src='https://www.designyourway.net/blog/wp-content/uploads/2018/12/Information-technology-big-data-collection-complex.jpg' />
                     </div>
                   </div>
                 </div>
@@ -128,7 +127,7 @@ const LandingPage = () => {
 
                     </div>
                     <div className="bx--col-md-4 bx--col-lg-7 marginTabSmallScreen">
-                      <img alt='neu' style={{ width: "100%", borderRadius: 10 }} src='https://www.designyourway.net/blog/wp-content/uploads/2018/12/Information-technology-big-data-collection-complex.jpg' />
+                      <img alt='neu' style={{ width: "100%", borderRadius: 10, marginTop: 20 }} src='https://www.designyourway.net/blog/wp-content/uploads/2018/12/Information-technology-big-data-collection-complex.jpg' />
                     </div>
                   </div>
                 </div>
@@ -143,10 +142,9 @@ const LandingPage = () => {
                       <p className="landing-page__p">
                         <FormComp />
                       </p>
-
                     </div>
                     <div className="bx--col-md-4 bx--col-lg-7 marginTabSmallScreen">
-                      <img alt='neu' style={{ width: "100%", borderRadius: 10 }} src='https://www.designyourway.net/blog/wp-content/uploads/2018/12/Information-technology-big-data-collection-complex.jpg' />
+                      <img alt='neu' style={{ width: "100%", borderRadius: 10, marginTop: 20 }} src='https://www.designyourway.net/blog/wp-content/uploads/2018/12/Information-technology-big-data-collection-complex.jpg' />
                     </div>
                   </div>
                 </div>
