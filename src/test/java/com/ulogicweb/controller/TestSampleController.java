@@ -1,4 +1,4 @@
-package com.ulogic.websiteback.controller;
+package com.ulogicweb.controller;
 
 public class TestSampleController {
 
