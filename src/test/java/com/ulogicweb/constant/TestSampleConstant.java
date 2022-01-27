@@ -1,4 +1,4 @@
-package com.ulogic.websiteback.constant;
+package com.ulogicweb.constant;
 
 public class TestSampleConstant {
 

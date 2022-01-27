@@ -48,3 +48,12 @@
 .landing-page__label {
   @include carbon--type-style('heading-01');
 }
+
+@media only screen and (max-width: 1026px) {
+  #smallScreenMenuLanding {
+      display: none;
+  }
+  .marginTabSmallScreen {
+    margin-top: -30px;
+  }
+}

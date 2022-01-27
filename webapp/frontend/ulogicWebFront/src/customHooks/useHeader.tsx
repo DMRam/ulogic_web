@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ObjectSelected, NewTabInfo } from '../customInterfaces/InterfacesHeader';
 import { Services } from '../axiosServices/axiosComponent/Services';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
-import { fileUploaderVisibility, newTabName, objectClicked, toggle, toggleRight } from '../store/switcher-slice';
+import { newTabName, objectClicked, toggle, toggleLeft, selectedTabSmallDev } from '../store/switcher-slice';
 
 
 export const useHeader = () => {
@@ -14,6 +14,8 @@ export const useHeader = () => {
     );
     const objectClickedBack = useAppSelector((state) => state.ui.objectSelected);
 
+    const leftMenuVisibilitySmallDevices = useAppSelector((state) => state.ui.isVisibleLeftSideMenuAux)
+
     const [objectName, setObject] = useState([
         {
             name: "",
@@ -24,13 +26,9 @@ export const useHeader = () => {
         },
     ]);
 
-    const [newTabInf, setNewTabIn] = useState([
-        {
-            id: "",
-            name: "",
-            description: ""
-        },
-    ]);
+    
+
+    const tabSelectedNumber = useAppSelector((state) => state.ui.selectedTabSideNavMenu)
 
     // this getting the controller with / ***************************
     useEffect(() => {
@@ -41,18 +39,14 @@ export const useHeader = () => {
     }, []);
 
     // use effect temporally getting info from the modal (Just the name)
-    useEffect(() => {
-        setNewTabIn(
-            newTabCreated
-        )
-    }, [])
+    
 
     const toggleSwitcher = () => {
         dispatch(toggle());
     };
 
     const switcherInitalState = () => {
-        dispatch(toggleRight())
+        dispatch(toggleLeft())
     }
 
     const objectClickHandler = (objectSelectedFromSwitcher: ObjectSelected) => {
@@ -64,11 +58,9 @@ export const useHeader = () => {
         console.log(infoToCreateNewTab + " OBJECT DISTPACHED")
     }
 
-    const fileUploaderHandler = () => {
-        dispatch(fileUploaderVisibility());
-    };
-
-
+    const smallDevTabSelectionHandler = (selectedSection: string) => {
+        dispatch(selectedTabSmallDev(selectedSection))
+    }
 
     return {
         objectName,
@@ -77,10 +69,11 @@ export const useHeader = () => {
         dispatch,
         toggleSwitcher,
         objectClickHandler,
-        fileUploaderHandler,
         switcherInitalState,
         newTabInfoHandler,
         newTabCreated,
-        newTabInf
+        tabSelectedNumber,
+        smallDevTabSelectionHandler,
+        leftMenuVisibilitySmallDevices
     }
 }

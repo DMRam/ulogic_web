@@ -9,28 +9,23 @@ interface ObjectSelected {
   configuration_3: string;
 }
 
-interface NewTabInformation {
-  id: string;
-  name: string;
-  description: string
-}
-
 // Define a type for the slice state
 interface ToggleState {
   isVisibleLeftSideMenu: boolean;
-  isfileUploaderVisibility: boolean;
+  isVisibleLeftSideMenuAux: boolean;
   objectSelected: ObjectSelected;
   newTabInfo: [{
     id: string;
     name: string;
     description: string
   }];
+  selectedTabSideNavMenu: string
 }
 
 // Define the initial state using that type
 const initialState: ToggleState = {
   isVisibleLeftSideMenu: false,
-  isfileUploaderVisibility: false,
+  isVisibleLeftSideMenuAux: false,
   objectSelected: {
     name: "",
     description: "",
@@ -43,6 +38,7 @@ const initialState: ToggleState = {
     name: "",
     description: ""
   }],
+  selectedTabSideNavMenu: "",
 };
 
 const sliceLeftMenu = createSlice({
@@ -53,8 +49,8 @@ const sliceLeftMenu = createSlice({
       state.isVisibleLeftSideMenu = !state.isVisibleLeftSideMenu;
     },
 
-    toggleRight(state) {
-      state.isVisibleLeftSideMenu = false;
+    toggleLeft(state) {
+      state.isVisibleLeftSideMenuAux = !state.isVisibleLeftSideMenuAux;
     },
 
     // This function will take whatever element is selected on switcher
@@ -62,18 +58,19 @@ const sliceLeftMenu = createSlice({
       state.objectSelected = action.payload;
     },
 
-    fileUploaderVisibility(state) {
-      state.isfileUploaderVisibility = !state.isfileUploaderVisibility;
-    },
 
     newTabName(state, action) {
       console.log(action.payload + " element received in slice")
       state.newTabInfo.push(action.payload)
-    }
+    },
+
+    selectedTabSmallDev(state, action) {
+      state.selectedTabSideNavMenu = action.payload
+    },
   },
 });
 
-export const { toggle, objectClicked, fileUploaderVisibility, toggleRight, newTabName } =
+export const { toggle, objectClicked, toggleLeft, newTabName, selectedTabSmallDev } =
   sliceLeftMenu.actions;
 export const selectUI = (state: RootState) => state.ui;
 

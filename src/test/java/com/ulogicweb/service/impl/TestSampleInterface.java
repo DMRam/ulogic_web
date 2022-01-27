@@ -1,6 +1,6 @@
-package com.ulogic.websiteback.service.impl;
+package com.ulogicweb.service.impl;
 
-import com.ulogic.websiteback.service.ITestSampleInterface;
+import com.ulogicweb.service.ITestSampleInterface;
 
 public class TestSampleInterface implements ITestSampleInterface
 {

@@ -1,4 +1,4 @@
-package com.ulogic.websiteback.utils;
+package com.ulogicweb.utils;
 
 public class TestSampleUtil {
 
