@@ -1,4 +1,4 @@
-ppackage com.ulogic.websiteback.bean;
+package com.ulogicweb.bean;
 
 public class TestSampleBean {
 

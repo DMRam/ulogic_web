@@ -1,4 +1,4 @@
-package com.ulogic.websiteback.service;
+package com.ulogicweb.service;
 
 public interface ITestSampleInterface {
 
