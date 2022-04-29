@@ -1,4 +1,4 @@
-package com.ulogic.websiteback.prism.utils;
+package com.ulogic.websiteback.utils;
 
 
 

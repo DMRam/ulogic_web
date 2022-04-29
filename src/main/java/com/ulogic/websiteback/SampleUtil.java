@@ -1,4 +1,4 @@
-package com.ulogic.websiteback.prism;
+package com.ulogic.websiteback;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
